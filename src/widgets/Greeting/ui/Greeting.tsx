@@ -21,9 +21,9 @@ export default function Greeting(){
                         <ReactTyped
                         className=" text-white m-l:text-xl t-s:text-2xl t-m:text-3xl t-x:text-4xl d-s:text-5xl"
                         strings={[
-                            "Hello!",
-                            "Привіт!",
-                            "Cześć!",
+                            "Hello!!",
+                            "Привіт!!",
+                            "Cześć!!",
                         ]}
                         typeSpeed={50}
                         backSpeed={200}
