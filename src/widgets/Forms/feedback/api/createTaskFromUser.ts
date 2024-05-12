@@ -1,7 +1,9 @@
+import { buildRequestPath } from "@/shared/utils/index"
+
 const createTaskFromUser = async (userID: any, description: string, service: string, name: string) => {
     const body = JSON.stringify(
       {
-        "name": `${name}, ${service} (site, https://TEST/TEST)`,
+        "name": `${name}, ${service} (site, https://cdfinance.pl)`,
         "description": description ? description : `Автоматически создано описание: Здравствуйте, меня зовут ${name}, заполнил форму на сайте, интересует услуга ${service}`,
         "assigner": {
           "id": `contact:${+userID}`
@@ -19,7 +21,7 @@ const createTaskFromUser = async (userID: any, description: string, service: str
         }
       }
     )
-    let response = await fetch(`https://proxy-for-best-friend-illya-charushyn.onrender.com/crm/proxy/rest/task/`, {
+    let response = await fetch(buildRequestPath('/crm/proxy/rest/task'), {
         method: 'POST',
         headers: {
             'accept': 'application/json',

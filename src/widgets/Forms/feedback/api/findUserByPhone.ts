@@ -1,3 +1,5 @@
+import { buildRequestPath } from "@/shared/utils/index"
+
 const findUserByPhone = async (values : {mobilecode: string, phone: string}) => {
     // group.id === 1 === client
     const body = JSON.stringify({
@@ -17,7 +19,7 @@ const findUserByPhone = async (values : {mobilecode: string, phone: string}) => 
             }
           ]
       })
-    let response = await fetch('https://proxy-for-best-friend-illya-charushyn.onrender.com/crm/proxy/rest/contact/list', {
+    let response = await fetch(buildRequestPath('/crm/proxy/rest/contact/list'), {
     method: 'POST',
     headers: {
       'accept': 'application/json',

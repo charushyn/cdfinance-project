@@ -1,3 +1,5 @@
+import { buildRequestPath } from "@/shared/utils/index"
+
 const createCardUser = async (values : {name: string, surname: string, email: string, mobilecode: string, phone: string, service: string, textarea: string}) => {
           const phone = `${values.mobilecode}${values.phone}`
           // const body = JSON.stringify({
@@ -24,7 +26,7 @@ const createCardUser = async (values : {name: string, surname: string, email: st
           //   "contacts": [],
           //   "customFieldData": []
           // })
-          let response = await fetch('https://proxy-for-best-friend-illya-charushyn.onrender.com/crm/proxy/rest/contact/', {
+          let response = await fetch(buildRequestPath('/crm/proxy/rest/contact'), {
           method: 'POST',
           headers: {
             'accept': 'application/json',
