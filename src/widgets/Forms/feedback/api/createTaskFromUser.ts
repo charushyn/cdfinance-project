@@ -21,7 +21,7 @@ const createTaskFromUser = async (userID: any, description: string, service: str
         }
       }
     )
-    let response = await fetch(buildRequestPath('/crm/proxy/rest/task'), {
+    let response = await fetch('http://46.41.140.125/crm/proxy/rest/task', {
         method: 'POST',
         headers: {
             'accept': 'application/json',

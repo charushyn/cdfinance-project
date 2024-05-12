@@ -26,7 +26,7 @@ const createCardUser = async (values : {name: string, surname: string, email: st
           //   "contacts": [],
           //   "customFieldData": []
           // })
-          let response = await fetch(buildRequestPath('/crm/proxy/rest/contact'), {
+          let response = await fetch('http://46.41.140.125/crm/proxy/rest/contact', {
           method: 'POST',
           headers: {
             'accept': 'application/json',
